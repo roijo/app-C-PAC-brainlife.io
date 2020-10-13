@@ -15,13 +15,13 @@ fi
 set -x
 set -e
 
-echo "getting testing image"
+echo "getting C-PAC Singularity image"
 time singularity pull cpac-singularity-image.simg shub://FCP-INDI/C-PAC || singularity pull cpac-singularity-image.simg docker://fcpindi/c-pac:latest
 
 echo "restructuring data"
 bl2bids
 
-echo "running cpac"
+echo "running C-PAC"
 mkdir -p output tmp
 
 time singularity run -e -B $PWD/tmp:/tmp cpac-singularity-image.simg bids output participant $preconfig --save_working_dir
