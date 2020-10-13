@@ -3,6 +3,15 @@
 #PBS -l vmem=30gb
 #PBS -N cpac
 
+# parse config.json for input parameters
+preconfig=$(jq -r .preconfig config.json)
+if [ "$preconfig" == "null" ] || [ "$preconfig" == "default" ]
+    then
+        preconfig=""
+    else
+        preconfig="--preconfig $preconfig"
+fi
+
 set -x
 set -e
 
@@ -15,4 +24,4 @@ bl2bids
 echo "running cpac"
 mkdir -p output tmp
 
-time singularity run -e -B $PWD/tmp:/tmp cpac-singularity-image.simg bids output participant --save_working_dir
+time singularity run -e -B $PWD/tmp:/tmp cpac-singularity-image.simg bids output participant $preconfig --save_working_dir
