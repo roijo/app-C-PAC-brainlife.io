@@ -28,7 +28,7 @@ This app:
 - [Brad Caron](https://github.com/bacaron)
 
 ### Funding Acknowledgements
-brainlife.io is publicly funded and for the sustainability of the project it is helpful to Acknowledge the use of the platform. We kindly ask that you acknowledge the funding below in your publications and code reusing this code.
+brainlife.io is publicly funded and for the sustainability of the project it is helpful to acknowledge the use of the platform. We kindly ask that you acknowledge the funding below in your publications and code reusing this code.
 
 [![NSF-BCS-1734853](https://img.shields.io/badge/NSF_BCS-1734853-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1734853)
 [![NSF-BCS-1636893](https://img.shields.io/badge/NSF_BCS-1636893-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1636893)
@@ -43,8 +43,8 @@ We kindly ask that you cite the following articles when publishing papers and co
 
 1. Avesani, P., McPherson, B., Hayashi, S., et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. *Sci Data 6*, 69 (2019). [doi:10.1038/s41597-019-0073-y](https://dx.doi.org/10.1038/s41597-019-0073-y)
 2. Craddock C., Sikka S., Cheung B., et al. Towards Automated Analysis of Connectomes:
-The Configurable Pipeline for the Analysis of Connectomes (C-PAC). Front. Neuroinform. Conference Abstract:
-*Neuroinformatics 2013* (2013). [doi:10.3389/conf.fninf.2013.09.00042](https://dx.doi.org/10.3389/conf.fninf.2013.09.00042)
+The Configurable Pipeline for the Analysis of Connectomes (C-PAC). *Front. Neuroinform*. Conference Abstract:
+Neuroinformatics 2013 (2013). [doi:10.3389/conf.fninf.2013.09.00042](https://dx.doi.org/10.3389/conf.fninf.2013.09.00042)
 
 
 ## Running the App
@@ -61,7 +61,7 @@ You can run this App online at [doi:10.25663/brainlife.app.399](https://doi.org/
 ```json
 {
   "t1": "./59a5f2a1c1e7111a78d11a51/t1.nii.gz",
-	"bold": "./59cc5342f45e7344b8c8afe5/bold.nii.gz",
+  "bold": "./59cc5342f45e7344b8c8afe5/bold.nii.gz",
   "preconfig": "fmriprep-options"
 }
 ```
