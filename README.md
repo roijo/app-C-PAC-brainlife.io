@@ -97,5 +97,5 @@ This App requires
 
 All of these dependencies are available on brainlife.io.
 
-#### brainlife.io:  MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
-#### C-PAC: BSD 3-Clause "New" or "Revised" License (c) 2016–2020 Child Mind Institute, Inc. and C-PAC developers
+#### brainlife.io:  [MIT Copyright © 2020 brainlife.io The University of Texas at Austin and Indiana University](./LICENSE)
+#### C-PAC: [BSD 3-Clause "New" or "Revised" License © 2016–2020 Child Mind Institute, Inc. and C-PAC developers](https://github.com/FCP-INDI/C-PAC/blob/master/LICENSE)
