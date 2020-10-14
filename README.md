@@ -5,18 +5,12 @@
 # app-C-PAC-brainlife.io
 This is an app to run [**C-PAC: Configurable Pipeline for the Analysis of Connectomes**](https://fcp-indi.github.io/docs/latest/user) [via brainlife.io]((https://brainlife.io/app/5f3593e84615e04651bf9364)).
 
-
 This app:
 1. gets the latest C-PAC Singularity image
 2. converts given [anat/t1w](https://brainlife.io/datatype/58c33bcee13a50849b25879a) and [func/task](https://brainlife.io/datatype/59b685a08e5d38b0b331ddc5) ([brainlife.io datatypes](https://brainlife.io/docs/user/datatypes)) to [BIDS](https://bids-specification.readthedocs.io/en/stable/) (the data structure required by C-PAC)
 3. runs C-PAC, persisting the working directory
      * with a [preconfigured pipeline](https://fcp-indi.github.io/docs/latest/user/preconfig) given the optional `preconfig` [configuration parameter](https://brainlife.io/docs/apps/register/#configuration-parameters)
      * with the [default pipeline](https://fcp-indi.github.io/docs/latest/user/preconfig#default-the-default-pipeline) otherwise
-
-#### Briefly explain what 1) means for novice users in a language that 1st year psychology student can understand it.
-
-#### Briefly description of input / output files.
-
 
 ### Authors
 - [The C-PAC Team](https://fcp-indi.github.io/docs/latest/user/#the-c-pac-team)
