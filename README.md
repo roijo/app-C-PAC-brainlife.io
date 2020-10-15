@@ -193,7 +193,7 @@ All of these dependencies are available on brainlife.io.
 ### Limitations
 
 #### Pipelines
-Currently this app only runs preconfigured pipelines. Please see the documentation for [Pre-configured Pipelines](https://fcp-indi.github.io/docs/latest/user/preconfig) to see the available pipelines. The default pipeline is [consistently erroring](https://github.com/FCP-INDI/app-C-PAC-brainlife.io/issues/2#issuecomment-702209732) at the moment.
+Currently this app only runs preconfigured pipelines. Please see the documentation for [Pre-configured Pipelines](https://fcp-indi.github.io/docs/latest/user/preconfig) to see the available pipelines.
 
 #### C-PAC version
 Currently this app only runs [the latest version](https://fcp-indi.github.io/docs/latest/user/release_notes/latest) of C-PAC.
