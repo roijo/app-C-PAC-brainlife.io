@@ -28,11 +28,11 @@ if [ ! -d bids ]
     bl2bids
 fi
 
-
 set -x
 set -e
 
 # run C-PAC
 echo "running C-PAC"
 mkdir -p output tmp
+
 time singularity run -e -B $PWD/tmp:/tmp cpac-singularity-image.simg bids output participant $preconfig --save_working_dir
