@@ -12,16 +12,27 @@ if [ "$preconfig" == "null" ] || [ "$preconfig" == "default" ]
         preconfig="--preconfig $preconfig"
 fi
 
+# get latest image if we don't already have one
+if [ -f cpac-singularity-image.simg ]
+  then
+    echo "using existing C-PAC Singularity image"
+  else
+    echo "getting C-PAC Singularity image"
+    time singularity pull cpac-singularity-image.simg shub://FCP-INDI/C-PAC || singularity pull cpac-singularity-image.simg docker://fcpindi/c-pac:latest
+fi
+
+# convert brainlife structure to BIDS
+if [ ! -d bids ]
+  then
+    echo "restructuring data"
+    bl2bids
+fi
+
+
 set -x
 set -e
 
-echo "getting C-PAC Singularity image"
-time singularity pull cpac-singularity-image.simg shub://FCP-INDI/C-PAC || singularity pull cpac-singularity-image.simg docker://fcpindi/c-pac:latest
-
-echo "restructuring data"
-bl2bids
-
+# run C-PAC
 echo "running C-PAC"
 mkdir -p output tmp
-
 time singularity run -e -B $PWD/tmp:/tmp cpac-singularity-image.simg bids output participant $preconfig --save_working_dir
