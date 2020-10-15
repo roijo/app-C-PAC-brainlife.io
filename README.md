@@ -91,5 +91,25 @@ This App requires
 
 All of these dependencies are available on brainlife.io.
 
+## Issues and troubleshooting
+
+### Limitations
+
+#### Pipelines
+Currently this app only runs preconfigured pipelines. Please see the documentation for [Pre-configured Pipelines](https://fcp-indi.github.io/docs/latest/user/preconfig) to see the available pipelines. The default pipeline is [consistently erroring](https://github.com/FCP-INDI/app-C-PAC-brainlife.io/issues/2#issuecomment-702209732) at the moment.
+
+#### C-PAC version
+Currently this app only runs [the latest version](https://fcp-indi.github.io/docs/latest/user/release_notes/latest) of C-PAC.
+
+### Bug reports and feature requests
+
+If you run into an issue, please check [existing bug reports](https://github.com/FCP-INDI/app-C-PAC-brainlife.io/issues?q=is%3Aissue+is%3Aopen+label%3Abug).
+
+If a bug report already exists for your issue, please add a :+1: and/or add any new information you have that might help us resolve the issue.
+
+If a bug report does not exist yet, please [open one using our bug report template](https://github.com/FCP-INDI/app-C-PAC-brainlife.io/issues/new?assignees=&labels=bug%2C+user-reported&template=bug_report.md&title=%F0%9F%90%9B+%5BUser-reported+Bug%5D), filling out as much detail as you can.
+
+If you want to request a feature, we also have [a template to create a feature request](https://github.com/FCP-INDI/app-C-PAC-brainlife.io/issues/new?assignees=&labels=enhancement%2C+user-reported&template=feature_request.md&title=%E2%9C%A8+%5BUser-requested+Feature%5D).
+
 #### brainlife.io:  [MIT Copyright © 2020 brainlife.io The University of Texas at Austin and Indiana University](./LICENSE)
 #### C-PAC: [BSD 3-Clause "New" or "Revised" License © 2016–2020 Child Mind Institute, Inc. and C-PAC developers](https://github.com/FCP-INDI/C-PAC/blob/master/LICENSE)
