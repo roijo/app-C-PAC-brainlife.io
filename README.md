@@ -49,33 +49,130 @@ You can run this App online at [doi:10.25663/brainlife.app.399](https://doi.org/
 
 ### Running Locally (on your machine)
 
-1. git clone this repo.
-2. Inside the cloned directory, create `config.json` with something like the following content with paths to your input files.
+C-PAC is a BIDS app, so it requires a BIDS directory. This brainlife.io app expects that BIDS directory to be a directory called `bids` in the same directory as the `main` script.
 
-```json
-{
-  "t1": "./59a5f2a1c1e7111a78d11a51/t1.nii.gz",
-  "bold": "./59cc5342f45e7344b8c8afe5/bold.nii.gz",
-  "preconfig": "fmriprep-options"
-}
-```
+1. `git clone` this repo.
+2. Copy (`cp -r /path/to/bids_dir ./bids`) or link (`cp -al /path/to/bids/dir ./bids`) a BIDS directory to a directory called `bids` within the cloned directory.
+3. Inside the cloned directory, create `config.json` with something like the following content with paths to your input files.
+    ```json
+    {
+      "preconfig": "fmriprep-options"
+    }
+    ```
+    At this point, your directory structure should look like
+    ```tree
+    .
+    ├── bids
+    |   └── …
+    ├── config.json
+    ├── LICENSE
+    ├── main
+    └── README.md
+    ```
+4. Launch the App by executing `main`
+    ```bash
+    ./main
+    ```
 
-3. Launch the App by executing `main`
+#### Simulating brainlife.io locally
 
-```bash
-./main
-```
+1. `git clone` this repo.
+2. If you don't have your own Brainlife input file, you can download sample datasets from Brainlife.io, or you can use [Brainlife CLI](https://github.com/brain-life/cli) (again, in the cloned directory).
+    ```BASH
+    npm install -g brainlife
+    bl login
+    bl dataset download 5e93e694aa1f998a35ac4d22
+    bl dataset download 5e56f2220f7fa621dd3cd1b7
+    ```
+3. Inside the cloned directory, create `config.json` with something like the following content with paths to your input files. Brainlife generates this config file automatically based on your selections in the web GUI.
+    ```json
+    {
+      "t1": "./5e93e694aa1f998a35ac4d22/t1.nii.gz",
+      "bold": "./5e56f2220f7fa621dd3cd1b7/bold.nii.gz",
+      "preconfig": "fmriprep-options",
+      "_inputs": [
+        {
+          "id": "t1",
+          "datatype": "58c33bcee13a50849b25879a",
+          "meta": {
+            "subject": "10",
+            "RepetitionTime": 3,
+            "TaskName": "Viewing alternating blocks presenting either ready-to-eat edible objects or pictures of items unrelated to food",
+            "MagneticFieldStrength": 3,
+            "Manufacturer": "GE",
+            "ManufacturersModelName": "DISCOVERY_MR750",
+            "SoftwareVersions": "23_LX_MR_Software_release:DV22.0_V02_1122.a",
+            "SeriesDescription": "fmri_2d_epi_condition_1",
+            "ScanningSequence": "EP_GR",
+            "SequenceVariant": "SS",
+            "ScanOptions": "SAT_GEMS_EPI_GEMS_ACC_GEMS_FS",
+            "ImageType": ["ORIGINAL", "PRIMARY", "EPI", "NONE"],
+            "SliceThickness": 3,
+            "SpacingBetweenSlices": 3,
+            "EchoTime": 0.03,
+            "FlipAngle": 90,
+            "PhaseEncodingPolarityGE": "Flipped",
+            "CoilString": "32Ch_Head",
+            "PercentPhaseFOV": 100,
+            "AcquisitionMatrixPE": 64,
+            "ReconMatrixPE": 64,
+            "EffectiveEchoSpacing": 0.000468,
+            "TotalReadoutTime": 0.029484,
+            "PixelBandwidth": 7812.5,
+            "PhaseEncodingDirection": "j",
+            "SliceTiming": [0,1.5,0.06,1.56,0.12,1.62,0.18,1.68,0.24,1.74,0.3,1.8,0.36,1.86,0.42,1.92,0.48,1.98,0.54,2.04,0.6,2.1,0.66,2.16,0.72,2.22,0.78,2.28,0.84,2.34,0.9,2.4,0.96,2.46,1.02,2.52,1.08,2.58,1.14,2.64,1.2,2.7,1.26,2.76,1.32,2.82,1.38,2.88,1.44,2.94],
+            "InPlanePhaseEncodingDirectionDICOM": "COL",
+            "task": "viewingfoodlowres",
+            "dim":[3,160,192,128,1,1,1,1],
+            "pixdim":[1,1,1.3333330154418945,1.3333330154418945,1,0,0,0]
+          },
+          "tags": [],
+          "datatype_tags": [],
+          "subdir": "5e93e694aa1f998a35ac4d22",
+          "dataset_id": "5e93e694aa1f998a35ac4d22",
+          "project": "5d64733db29ac960ca2e797f",
+          "task_id": "5f861c7bc7adcbb6ae137fe1",
+          "keys": [
+            "t1"
+          ]
+        },
+        {
+          "id": "func",
+          "datatype": "59b685a08e5d38b0b331ddc5",
+          "meta": {
+            "AcquisitionDateTime": "2017-04-13T11:48:43.116000",
+            "EchoTime": 0.0352,
+            "EffectiveEchoSpacing": 0.000580013,
+            "FlipAngle": 56,
+            "ImageType": ["ORIGINAL","PRIMARY","M","MB","ND","MOSAI"],
+            "MagneticFieldStrength": 3,
+            "Manufacturer": "Siemens",
+            "ManufacturersModelName": "Prisma",
+            "PhaseEncodingDirection": "j-",
+            "RepetitionTime": 0.955,
+            "SliceTiming": [0.875,0.795,0.715,0.635,0.5575,0.4775,0.3975,0.3175,0.2375,0.1575,0.08,0,0.875,0.795,0.715,0.635,0.5575,0.4775,0.3975,0.3175,0.2375,0.1575,0.08,0,0.875,0.795,0.715,0.635,0.5575,0.4775,0.3975,0.3175,0.2375,0.1575,0.08,0,0.875,0.795,0.715,0.635,0.5575,0.4775,0.3975,0.3175,0.2375,0.1575,0.08,0,0.875,0.795,0.715,0.635,0.5575,0.4775,0.3975,0.3175,0.2375,0.1575,0.08,0],
+            "TaskName": "rest",
+            "TotalReadoutTime": 0.0580013,
+            "subject": "10",
+            "task": "rest"
+          },
+          "tags": ["task-rest"],
+          "datatype_tags": ["rest"],
+          "subdir": "5e56f2220f7fa621dd3cd1b7",
+          "dataset_id": "5e56f2220f7fa621dd3cd1b7",
+          "project": "5d64733db29ac960ca2e797f",
+          "task_id": "5f861c7bc7adcbb6ae137fe1",
+          "keys": ["bold"]
+        }
+      ]
+    }
+    ```
 
-### Sample Datasets
+4. Launch the App by executing `main`
+    ```bash
+    ./main
+    ```
 
-If you don't have your own input file, you can download sample datasets from Brainlife.io, or you can use [Brainlife CLI](https://github.com/brain-life/cli) (again, in the cloned directory).
-
-```
-npm install -g brainlife
-bl login
-bl dataset download 59a5f2a1c1e7111a78d11a51
-bl dataset download 59cc5342f45e7344b8c8afe5
-```
 
 ## Output
 
