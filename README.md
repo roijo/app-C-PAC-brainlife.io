@@ -167,7 +167,19 @@ C-PAC is a BIDS app, so it requires a BIDS directory. This brainlife.io app expe
       ]
     }
     ```
-
+    At this point, your directory structure should look like
+    ```tree
+    .
+    ├── 5e56f2220f7fa621dd3cd1b7
+    |   └── bold.nii.gz
+    ├── 5e93e694aa1f998a35ac4d22
+    |   └── t1.nii.gz
+    ├── config.json
+    ├── LICENSE
+    ├── main
+    └── README.md
+    ```
+    which is quite like what the directory structure would be on brainlife.io.
 4. Launch the App by executing `main`
     ```bash
     ./main
