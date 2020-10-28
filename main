@@ -5,7 +5,7 @@
 
 # parse config.json for input parameters
 preconfig=$(jq -r .preconfig config.json)
-if [ "$preconfig" == "null" ] || [ "$preconfig" == "default" ]
+if [ "$preconfig" == "" ] || [ "$preconfig" == "null" ] || [ "$preconfig" == "default" ]
     then
         preconfig=""
     else
