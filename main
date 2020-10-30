@@ -35,4 +35,4 @@ set -e
 echo "running C-PAC"
 mkdir -p output tmp
 
-time singularity run -e -B $PWD/bids:/bids -B $PWD/output:/output -B $PWD/tmp:/tmp cpac-singularity-image.simg /bids /output participant $preconfig --save_working_dir
+time singularity run -e -B $PWD/bids:$PWD/bids -B $PWD/output:$PWD/output -B $PWD/tmp:/tmp cpac-singularity-image.simg $PWD/bids $PWD/output participant $preconfig --save_working_dir
