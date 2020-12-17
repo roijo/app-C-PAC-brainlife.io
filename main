@@ -18,7 +18,7 @@ if [ -f cpac-singularity-image.simg ]
     echo "using existing C-PAC Singularity image"
   else
     echo "getting C-PAC Singularity image"
-    time curl -LOJ https://4340-4733263-gh.circle-artifacts.com/0/cpac-singularity-image.simg
+    time curl -LOJ https://4344-4733263-gh.circle-artifacts.com/0/cpac-singularity-image.simg
 fi
 
 # convert brainlife structure to BIDS
